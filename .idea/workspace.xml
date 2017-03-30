@@ -65,6 +65,7 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gamePlayer/Game.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="1456">
               <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
               <folding>
@@ -83,6 +84,11 @@
                 <marker date="1490878987838" expanded="false" signature="1991:1996" ph=" { " />
                 <marker date="1490878987838" expanded="false" signature="2033:2036" ph=" }" />
               </folding>
+=======
+            <state relative-caret-position="1482">
+              <caret line="59" column="31" lean-forward="true" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+              <folding />
+>>>>>>> dev
             </state>
           </provider>
         </entry>
@@ -94,7 +100,10 @@
               <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding>
                 <element signature="e#1968#1976#0" expanded="true" />
+<<<<<<< HEAD
                 <marker date="1490878987932" expanded="true" signature="4430:4668" ph="{...}" />
+=======
+>>>>>>> dev
               </folding>
             </state>
           </provider>
@@ -130,7 +139,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/gamePlayer/Game.java" />
         <option value="$PROJECT_DIR$/src/othello/Othello.java" />
+        <option value="$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java" />
       </list>
     </option>
   </component>
@@ -233,8 +244,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
-    <property name="SearchEverywhereHistoryKey" value="child&#9;PSI&#9;JAVA://othello.OthelloState#childOnMove&#10;move&#9;PSI&#9;JAVA://othello.OthelloState#move" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="SearchEverywhereHistoryKey" value="compu&#9;PSI&#9;JAVA://gamePlayer.algorithms.MiniMaxDecider#computedStates&#10;implement&#9;ACTION&#9;ImplementMethods&#10;child&#9;PSI&#9;JAVA://othello.OthelloState#childOnMove&#10;move&#9;PSI&#9;JAVA://othello.OthelloState#move" />
   </component>
   <component name="RunManager" selected="Application.Othello">
     <configuration default="false" name="Othello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -497,7 +508,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -508,10 +519,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23895809" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23895809" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19721329" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -544,6 +555,7 @@
     <entry file="file://$PROJECT_DIR$/src/gamePlayer/._Game.java" />
     <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/._ActionValuePair.java" />
     <entry file="file://$PROJECT_DIR$/src/othello/OthelloAction.java">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
           <caret line="25" column="50" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
@@ -658,33 +670,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16692">
           <caret line="653" column="16" lean-forward="true" selection-start-line="653" selection-start-column="16" selection-end-line="653" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/othello/OthelloAction.java">
+=======
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
           <caret line="25" column="50" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+>>>>>>> dev
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/othello/Othello.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="327" column="54" lean-forward="false" selection-start-line="327" selection-start-column="54" selection-end-line="327" selection-end-column="54" />
-          <folding>
-            <element signature="method#sToM#0;class#Othello#0" expanded="false" />
-            <element signature="e#6997#7017#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gamePlayer/InvalidActionException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -696,11 +687,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="477">
+          <caret line="327" column="54" lean-forward="false" selection-start-line="327" selection-start-column="54" selection-end-line="327" selection-end-column="54" />
+          <folding>
+            <element signature="method#sToM#0;class#Othello#0" expanded="false" />
+            <element signature="e#6997#7017#0" expanded="true" />
+          </folding>
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+>>>>>>> dev
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gamePlayer/Decider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gamePlayer/InvalidStateException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+<<<<<<< HEAD
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="35" />
+=======
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+>>>>>>> dev
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gamePlayer/InvalidActionException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gamePlayer/State.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9">
           <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gamePlayer/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1482">
+          <caret line="59" column="31" lean-forward="true" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/othello/OthelloState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16692">
+          <caret line="653" column="16" lean-forward="true" selection-start-line="653" selection-start-column="16" selection-end-line="653" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gamePlayer/algorithms/MiniMaxDecider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-433">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <element signature="e#1968#1976#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/othello/Othello.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="327" column="54" lean-forward="false" selection-start-line="327" selection-start-column="54" selection-end-line="327" selection-end-column="54" />
+          <folding>
+            <element signature="method#sToM#0;class#Othello#0" expanded="false" />
+            <element signature="e#6997#7017#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
