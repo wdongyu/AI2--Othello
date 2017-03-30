@@ -17,7 +17,7 @@ public class Game {
 	private Decider playerTwo;
 	// The current state of the game we are on
 	private State currentState;
-	// Whose turn is it?
+	// Whose turn is it?	true-playerOne false-playerTwo
 	private boolean turn;
 	
 	/**
