@@ -453,7 +453,7 @@ public class MTDDecider implements Decider {
 			bestActions.add(avp.action);
 		}
 
-		//Collections.shuffle(bestActions);
+		//Collections.shuffle(bestActions);  ? ?
 		if (bestV == LOSE) {
 			if (DEBUG)
 				System.out.println("I LOST :(");
