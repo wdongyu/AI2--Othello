@@ -61,7 +61,7 @@ public class MiniMaxDecider implements Decider {
 			try {
 				// Algorithm!
 				State newState = action.applyTo(state);
-				float newValue = this.miniMaxRecursor(newState, Float.NEGATIVE_INFINITY, Float.POSITIVE_INFINITY, 1, !this.maximize);
+				float newValue = this.miniMaxRecursor(newState, 1, !this.maximize);
 				// Better candidates?
 				if (flag * newValue > flag * value) {
 					value = newValue;
@@ -89,7 +89,7 @@ public class MiniMaxDecider implements Decider {
 	 * @return The best point count we can get on this branch of the state space to the specified depth.
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public float miniMaxRecursor(State state, float alpha, float beta, int depth, boolean maximize) {
+	public float miniMaxRecursor(State state, int depth, boolean maximize) {
 		// Has this state already been computed?
 		if (computedStates.containsKey(state)) 
                     // Return the stored result
@@ -111,20 +111,10 @@ public class MiniMaxDecider implements Decider {
 			// Check it. Is it better? If so, keep it.
 			try {
 				State childState = action.applyTo(state);
-				float newValue = this.miniMaxRecursor(childState, alpha, beta, depth + 1, !maximize);
+				float newValue = this.miniMaxRecursor(childState, depth + 1, !maximize);
 				//Record the best value
                                 if (flag * newValue > flag * value) 
                                     value = newValue;
-
-				//add alpha-beta pruning
-								if (flag==1) {
-									if (value >= beta) return value;
-									alpha = alpha >= value ? alpha : value;
-								}
-								else {
-									if (value <= alpha) return value;
-									beta = beta <= value ? beta : value;
-								}
 			} catch (InvalidActionException e) {
                                 //Should not go here
 				throw new RuntimeException("Invalid action!");
