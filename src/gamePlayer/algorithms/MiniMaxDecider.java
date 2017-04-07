@@ -30,6 +30,8 @@ public class MiniMaxDecider implements Decider {
 	private Map<State, Float> computedStates;
 	// Used to generate a graph of the search space for each turn in SVG format
 	private static final boolean DEBUG = true;
+	// The mode to be chosen 1-MiniMax without pruning , 2-MiniMax with pruning at depth 3 , 3-MiniMax wtih pruning at depth 2
+	private final int mode = 3;
 	
 	/**
 	 * Initialize this MiniMaxDecider. 
@@ -52,16 +54,22 @@ public class MiniMaxDecider implements Decider {
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Action decide(State state) {
+		long startTime=System.currentTimeMillis();
 		// Choose randomly between equally good options
 		float value = maximize ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;
 		List<Action> bestActions = new ArrayList<Action>();
 		// Iterate!
 		int flag = maximize ? 1 : -1;
+		float alpha=Float.NEGATIVE_INFINITY, beta=Float.POSITIVE_INFINITY;
 		for (Action action : state.getActions()) {
 			try {
 				// Algorithm!
 				State newState = action.applyTo(state);
-				float newValue = this.miniMaxRecursor(newState, 1, !this.maximize);
+				float newValue;
+				if (mode == 1)
+					newValue = this.miniMaxRecursor(newState, 1, !this.maximize);
+				else
+					newValue = this.miniMaxRecursor(newState, alpha, beta, 1, !this.maximize);
 				// Better candidates?
 				if (flag * newValue > flag * value) {
 					value = newValue;
@@ -69,12 +77,21 @@ public class MiniMaxDecider implements Decider {
 				}
 				// Add it to the list of candidates?
 				if (flag * newValue >= flag * value) bestActions.add(action);
+
+				if (mode == 3 && flag == 1) {
+					alpha = alpha > value ? alpha : value;
+				}
+				else if (mode == 3 && flag == -1) {
+					beta = beta < value ? beta : value;
+				}
+				else {}
 			} catch (InvalidActionException e) {
 				throw new RuntimeException("Invalid action!");
 			}
 		}
 		// If there are more than one best actions, pick one of the best randomly
 		Collections.shuffle(bestActions);
+		System.out.println("Time used : " + (System.currentTimeMillis() - startTime ));
 		return bestActions.get(0);
 	}
 
@@ -117,6 +134,71 @@ public class MiniMaxDecider implements Decider {
                                     value = newValue;
 			} catch (InvalidActionException e) {
                                 //Should not go here
+				throw new RuntimeException("Invalid action!");
+			}
+		}
+		// Store so we don't have to compute it again.
+		return finalize(state, value);
+	}
+
+	/**
+	 * The true implementation of the MiniMax algorithm!
+	 * Thoroughly commented for your convenience.
+	 * @param state    The State we are currently parsing.
+	 * @param alpha    The alpha bound for alpha-beta pruning.
+	 * @param beta     The beta bound for alpha-beta pruning.
+	 * @param depth    The current depth we are at.
+	 * @param maximize Are we maximizing? If not, we are minimizing.
+	 * @return The best point count we can get on this branch of the state space to the specified depth.
+	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public float miniMaxRecursor(State state, float alpha, float beta, int depth, boolean maximize) {
+		// Has this state already been computed?
+		if (computedStates.containsKey(state))
+			// Return the stored result
+			return computedStates.get(state);
+		// Is this state done?
+		if (state.getStatus() != Status.Ongoing)
+			// Store and return
+			return finalize(state, state.heuristic());
+		// Have we reached the end of the line?
+		if (depth == this.depth)
+			//Return the heuristic value
+			return state.heuristic();
+
+		// If not, recurse further. Identify the best actions to take.
+		float value = maximize ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;
+		int flag = maximize ? 1 : -1;
+		List<Action> test = state.getActions();
+		for (Action action : test) {
+			// Check it. Is it better? If so, keep it.
+			try {
+				State childState = action.applyTo(state);
+				float newValue = this.miniMaxRecursor(childState, alpha, beta, depth + 1, !maximize);
+				//Record the best value
+				if (flag * newValue > flag * value)
+					value = newValue;
+				//add alpha-beta pruning
+				if (flag == 1) {
+					if (mode == 2) {
+						if (value >= beta) return value;
+					}
+					else {
+						if (value > beta) return value;
+					}
+					alpha = alpha > value ? alpha : value;
+				}
+				else {
+					if (mode == 2) {
+						if (value <= alpha) return value;
+					}
+					else {
+						if (value < alpha) return value;
+					}
+					beta = beta < value ? beta : value;
+				}
+			} catch (InvalidActionException e) {
+				//Should not go here
 				throw new RuntimeException("Invalid action!");
 			}
 		}

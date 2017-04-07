@@ -108,9 +108,11 @@ class GamePanel extends JPanel implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if (inputEnabled) {
+			OthelloState.max=false;
 			byte j = (byte) (e.getX() /  Square_L);
 			byte i = (byte) (e.getY() /  Square_L);
 			OthelloAction a = new OthelloAction(humanPlayerOne, (byte) i, (byte) j);
+			a=(OthelloAction) new MiniMaxDecider(false,5).decide(board);
                         // lastAction = a;
 			if (a.validOn(board)) {
 				try {
@@ -145,6 +147,7 @@ class GamePanel extends JPanel implements MouseListener {
 	}
 
 	public void computerMove() {
+		OthelloState.max=true;
 		if (board.getStatus() != Status.Ongoing) {
 			showWinner();
 			return;
@@ -325,7 +328,7 @@ public class Othello extends JFrame {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				// 0 - Human plays first, 1000ms - time for computer decision (for MTDDecider)
-				Othello frame = new Othello(0, 1000, 5);
+				Othello frame = new Othello(1, 1000, 5);
 			}
 		});
 

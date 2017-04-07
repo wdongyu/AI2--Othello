@@ -23,7 +23,8 @@ public class OthelloState implements State {
 	// The dimension of this board. Since we're using shorts, must be less than or equal to 8.
 	private static final int dimension = 8;
 	private static final boolean ZOBRIST_HASHING = true;
-        
+
+	public static boolean max;
 	
 	/**
 	 * 00 = empty; 01 = ignored; 10 = white; 11 = black.
@@ -738,6 +739,21 @@ public class OthelloState implements State {
 		for (short corner : corners) if (corner != 0) diff += corner == 2 ? 1 : -1;
 		return diff;
 	}
+
+	/**
+	 * Get the difference between the number of X-square player 1 and player 2 occupy.
+	 * @return the aforementioned diffrence
+	 */
+	private float XSquareDifferential() {
+		float diff = 0;
+		short[] XSquares = new short[4];
+		XSquares[0] = getSpotOnLine(hBoard[1], (byte)1);
+		XSquares[1] = getSpotOnLine(hBoard[1], (byte)(dimension-2));
+		XSquares[2] = getSpotOnLine(hBoard[dimension-2], (byte)1);
+		XSquares[3] = getSpotOnLine(hBoard[dimension-2], (byte)(dimension-2));
+		for (short X : XSquares) if (X !=0) diff += X == 2 ? 1 : -1;
+		return diff;
+	}
 	
 	/** {@inheritDoc} */
 	@Override
@@ -759,7 +775,8 @@ public class OthelloState implements State {
 		return this.pieceDifferential() +
 		   8 * this.moveDifferential() +
 		  300 * this.cornerDifferential() +
-		   1 * this.stabilityDifferential() + 
+				(max ? 1 : 0) * this.stabilityDifferential() -
+				(!max ? 1 : 0) * this.XSquareDifferential() +
 		   winconstant;
 	}
 	
