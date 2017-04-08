@@ -775,7 +775,7 @@ public class OthelloState implements State {
 		return this.pieceDifferential() +
 		   8 * this.moveDifferential() +
 		  300 * this.cornerDifferential() +
-				(max ? 1 : 0) * this.stabilityDifferential() -
+			1 * this.stabilityDifferential() -
 				(!max ? 1 : 0) * this.XSquareDifferential() +
 		   winconstant;
 	}

@@ -30,7 +30,9 @@ public class MiniMaxDecider implements Decider {
 	private Map<State, Float> computedStates;
 	// Used to generate a graph of the search space for each turn in SVG format
 	private static final boolean DEBUG = true;
-	// The mode to be chosen 1-MiniMax without pruning , 2-MiniMax with pruning at depth 3 , 3-MiniMax wtih pruning at depth 2
+	/** The mode to be chosen
+	 * 	1-MiniMax without pruning , 2-MiniMax with pruning at depth 3 , 3-MiniMax wtih pruning at depth 2
+	 */
 	private final int mode = 3;
 	
 	/**
